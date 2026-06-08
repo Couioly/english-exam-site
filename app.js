@@ -1,10 +1,36 @@
-const pages = [
+﻿const pages = [
   { id: "translation", label: "翻译题", title: "汉译英翻译" },
   { id: "listening", label: "听力题", title: "听力选项练习" },
   { id: "inReading", label: "课内阅读", title: "Text A / Comprehension Check" },
   { id: "outReading", label: "课外阅读", title: "Session C Passages" },
   { id: "cloze", label: "选词填空", title: "Reading Comprehension" },
   { id: "vocabulary", label: "词汇题", title: "Unit 1-2 词汇填空" }
+];
+
+const subjects = [
+  { id: "english", label: "基础外语 IV", subtitle: "基础外语 IV", pages },
+  {
+    id: "algorithm",
+    label: "算法分析与设计",
+    subtitle: "算法分析与设计",
+    pages: [
+      { id: "algChoice", label: "选择题", title: "选择题" },
+      { id: "algBlank", label: "填空题", title: "填空题" },
+      { id: "algShort", label: "简答题", title: "简答题" },
+      { id: "algDesign", label: "算法设计题", title: "算法设计题" }
+    ]
+  },
+  {
+    id: "software",
+    label: "软件工程",
+    subtitle: "软件工程",
+    pages: [
+      { id: "swChoice", label: "选择题", title: "选择题" },
+      { id: "swBlank", label: "填空题", title: "填空题" },
+      { id: "swJudge", label: "判断题", title: "判断题" },
+      { id: "swShort", label: "简答与设计", title: "简答题及设计题相关知识点" }
+    ]
+  }
 ];
 
 const data = {
@@ -169,7 +195,112 @@ const data = {
   ]
 };
 
+const algorithmData = {
+  algChoice: [
+    ref("1．下列说法错误的是（     ）。\nA．算法是程序在计算机上的具体实现。\nB．算法是用计算机编程语言翻译的结果。\nC．算法能直接在计算机上执行。\nD．程序能直接在计算机上执行。", "参考答案：A、B、C 均不严谨。若按单选题处理，优先选 C。算法是解决问题的步骤描述，不能直接在计算机上执行；程序才是可执行实现。"),
+    ref("2．用贪心法解决背包问题时所用的贪心策略是（       ）。\nA．重量小的物品优先装入背包\nB．价值大的物品优先装入背包\nC．单位重量的价值大的物品优先装入背包\nD．单位重量的价值小的物品优先装入背包", "答案：C。部分背包问题常按单位重量价值从大到小选择。"),
+    ref("3．找零钱问题中，面值为 1 元、5 元、10 元的硬币，要找出最少数量的硬币凑成指定金额，贪心策略应该选择（   ）。\nA．面值尽可能最小的硬币\nB．剩余数量最少的硬币\nC．面值尽可能最大的硬币\nD．剩余数量最多的硬币", "答案：C。每次选择不超过剩余金额的最大面值硬币。"),
+    ref("4．回溯法求解 n 个顶点的图的 m 着色问题时，最坏情况下时间复杂度是（     ）。\nA．O(nm^n)    B．O(n^2)    C．O(n2^n)    D．O(2^n)", "答案：A。最坏要枚举 m^n 种着色方案，每个结点检查约 O(n)。"),
+    ref("5．有序序列 T[]={1,4,6,8,10,12}，用二分搜索查找 x=9，比较（    ）次得出结论。\nA．5   B．3   C．4   D．2", "答案：B。依次与 6、10、8 比较，共 3 次。"),
+    ref("6．算法五种特性分别是输入、输出、（    ）、有限性、可行性。\nA．鲁棒性    B．二义性    C．确定性    D．兼容性", "答案：C。"),
+    ref("7．贪心算法框架中，从候选集合中选出当前看来最好元素的函数是（ ）。\nA．可行函数    B．解决函数    C．选择函数    D．目标函数", "答案：C。"),
+    ref("8．0-1 背包：n=6，W=10，v=(15,59,21,30,60,5)，w=(1,5,2,3,6,1)。最大价值为（    ）。\nA．101    B．110    C．115    D．120", "答案：B。选择第 2、3、4 个物品，重量 5+2+3=10，价值 59+21+30=110。"),
+    ref("9．使用子集树解决 0-1 背包问题时算法时间复杂度为（   ）。\nA．O(m2^m)    B．O(n2^n)    C．O(2^mn)    D．O(2^nm)", "答案：B。子集树规模为 2^n，通常还要做结点处理。"),
+    ref("10．n 皇后问题中引入随机化算法的方法中正确的是（    ）。\nA．随机选取棋盘上的一个位置，只要和其它皇后不冲突即可\nB．随机选择不同斜线的位置\nC．随机选择不同列的位置\nD．随机选择不同行的位置", "参考答案：C。常见建模是一行放一个皇后，随机选择可行列。若教材采用“随机选择行”的表述，应以课堂口径为准。"),
+    ref("11．TSP 回溯中，若当前路径累积距离已超过已知最优解，算法会？\nA．继续计算完整路径    B．剪枝，放弃该路径并回溯\nC．随机选择另一条路径    D．重置所有城市访问状态", "答案：B。"),
+    ref("12．回溯法中，可行解是指（     ）。\nA．满足问题约束条件的解    B．所有可能的解\nC．目标函数值最大的解    D．仅包含部分变量的解", "答案：A。"),
+    ref("13．T(n)=2T(n/2)+1，T(1)=1，则 T(n)=（     ）。\nA．nlogn    B．logn    C．n^2    D．nlgn", "参考答案：T(n)=2n-1，渐进复杂度为 Θ(n)。原选项中没有标准正确项。"),
+    ref("14．特殊棋盘覆盖采用分治算法，以下描述不正确的是（       ）。\nA．首次分解为 2 个 2^3*2^3 子棋盘\nB．采用边分边治的方法不断构造与原问题相同的子问题\nC．首次分解为 4 个 2^3*2^3 子棋盘\nD．核心思想是递归算法", "答案：A。棋盘覆盖通常每次分成 4 个子棋盘。"),
+    ref("15．无向图 G=(V,E)，|V|=n，图的 m 可着色判定问题时间复杂度为（     ）。\nA．O(mn^m)    B．O(nm^n)    C．O(2^mn)    D．O(2^nm)", "答案：B。"),
+    ref("16．两个序列长度分别为 m、n，求最长公共子序列耗时（      ）。\nA．O(m^2)    B．O(n^2)    C．O(mn)    D．O(mn)", "答案：C 或 D，原题选项重复；标准答案为 O(mn)。"),
+    ref("17．影响算法时间复杂度的主要因素除算法本身外，正确的是（多选）。\nA．一定与输入序列有关\nB．一定不与输入序列有关\nC．不一定与输入序列有关\nD．一般与问题规模有关", "答案：C、D。"),
+    ref("18．T(n)=30n^4+20n^3+40n^2+46n+100，可用哪些渐进符号表示？（多选）\nA．O    B．Ω    C．Θ    D．以上都不能", "答案：A、B、C。它可表示为 O(n^4)、Ω(n^4)、Θ(n^4)。"),
+    ref("19．关于伪代码，正确的是（    ）。\nA．不能使用数学符号\nB．不能被人类理解，只能被计算机执行\nC．必须严格遵循某种编程语言语法\nD．使用自然语言和类编程语言结构，便于描述算法逻辑", "答案：D。"),
+    ref("20．关于 Kruskal 算法，正确的是（多选）。\nA．时间复杂度为 O(e log e)\nB．对稠密图比 Prim 有效\nC．对稀疏图比 Prim 有效\nD．任何无向连通图都比 Prim 有效", "答案：A、C。"),
+    ref("21．分治法将大问题分解为多个子问题，子问题必须满足（多选）。\nA．一般不相互独立    B．相互独立    C．规模变小    D．与原问题相同", "答案：B、C、D。"),
+    ref("22．二分查找时间复杂度为（     ）。\nA．O(nlogn)    B．O(n)    C．O(logn)    D．以上都不对", "答案：C。"),
+    ref("23．X={A,B,C,B,D,A,B}，Y={A,C,B,E,D,B}，LCS 长度为（        ）。\nA．3    B．6    C．5    D．4", "答案：D。一个最长公共子序列长度为 4。"),
+    ref("24．部分背包与 0-1 背包的区别是（      ）。\nA．部分背包必须装满背包\nB．部分背包可以取物品一部分\nC．0-1 背包允许物品分割\nD．部分背包时间复杂度更高", "答案：B。"),
+    ref("25．关于算法时间复杂度主要影响因素，不正确的是（多选）。\nA．一定与输入序列有关\nB．一定不与输入序列有关\nC．不一定与输入序列有关\nD．一般与问题规模有关", "答案：A、B。"),
+    ref("26．回溯法通常采用哪种搜索策略？\nA．广度优先    B．深度优先    C．动态规划    D．贪心", "答案：B。"),
+    ref("27．算法分析是（   ）。\nA．将算法用语言表示出来\nB．执行程序确定错误结果\nC．对算法需要多少计算时间和存储空间作定量分析\nD．证明算法正确性", "答案：C。"),
+    ref("28．A[1..60]={11,12,...,70}，二分搜索 x=7、33、70、77 的比较次数分别为 a、b、c、d，则（   ）。\nA．a<b<c<d    B．a>b=c=d    C．a<b=c=d    D．a<c<b=d", "参考答案：此题依赖 mid 取整方式和比较计数口径。若按常见教材口径，通常选 B；建议以课堂二分模板为准。"),
+    ref("29．M1(5×10), M2(10×4), M3(4×6)，矩阵链乘最少乘法次数为（   ）。\nA．540    B．320    C．720    D．300", "答案：B。先算 M1M2：200，再乘 M3：120，总计 320。"),
+    ref("30．用贪心法设计算法的关键是（      ）。\nA．分解子问题    B．选好贪心策略    C．获取递推关系式    D．满足最优性原理", "答案：B。"),
+    ref("31．下列（     ）不是描述算法的工具。\nA．数据流图    B．伪代码    C．自然语言    D．程序语言", "答案：A。"),
+    ref("32．若算法执行时间不超过输入规模的两倍，渐进时间复杂度为（     ）。\nA．O(n^2)    B．O(n)    C．    D．", "答案：B。"),
+    ref("33．动态规划“以空间换时间”的核心原因是（ ）。\nA．必须使用贪心策略\nB．子问题固定大小\nC．记录子问题的解以避免重复计算\nD．存储所有可能解", "答案：C。"),
+    ref("34．for(int i=0;i<n;i++) for(int j=0;j<i;j++) S; S 执行次数为（     ）。\nA．n^2    B．n^2/2    C．n(n+1)/2    D．n(n-1)/2", "答案：D。"),
+    ref("35．3 位密码包含 2、3、5，采用排列树构建解空间，可能解个数是？\nA．6    B．3    C．27    D．9", "答案：A，3! = 6。"),
+    ref("36．使用 F(n)=n*F(n) 递归求 F(4)，边界 F(0)=1，递归调用子函数次数为（     ）。\nA．3次    B．4次    C．5次    D．8次", "参考答案：若不计初始 F(4)，递归调用 4 次；若计入初始调用，共 5 次。题干写“调用子函数”通常选 B。"),
+    ref("37．Fibonacci 第 1 项为 0，第 2 项为 1，第 10 项为（     ）。\nA．3    B．13    C．21    D．34", "答案：D。"),
+    ref("38．下列排序算法不是基于交换的是（     ）。\nA．冒泡排序    B．快速排序    C．合并排序    D．堆排序", "答案：C。"),
+    ref("39．“对于给定输入数组，交换两个数的位置”违反算法的（     ）特性。\nA．有穷性    B．确定性    C．可行性    D．复杂性", "答案：B。没有说明交换哪两个数，步骤不确定。"),
+    ref("40．背包容量 100，物品 10 个，动态规划解 0-1 背包数组大小为（     ）。\nA．10    B．100    C．1000    D．10000", "答案：C。教材常按 n*V 估算，即 10*100=1000。严格实现也可能是 (n+1)(V+1)。"),
+    ref("41．5 个矩阵连乘可能的计算次序有（     ）种。\nA．4    B．5    C．14    D．15", "答案：C。Catalan(4)=14。"),
+    ref("42．折半查找算法在最坏情况下复杂度为（      ）。\nA．O(n)    B．O(n^2)    C．O(nlogn)    D．O(logn)", "答案：D。"),
+    ref("43．X 长 20，Y 长 30，动态规划解 LCS，记录子问题最优值的数组大小为（      ）。\nA．651    B．600    C．620    D．630", "答案：A。通常建 (m+1)(n+1)=21*31=651。"),
+    ref("44．关于回溯法中“剪枝”，正确的是（   ）。\nA．剪枝函数越复杂效率越高\nB．剪枝只能用于最优解\nC．剪枝减少搜索节点，不改变解空间结构，也不影响最终结果\nD．剪枝会改变解空间，可能导致找不到最优解", "答案：C。"),
+    ref("45．哪个算法不是分治算法典型应用？\nA．二分查找    B．0-1 背包    C．循环赛日程表    D．快速排序", "答案：B。"),
+    ref("46．算法“有穷性”描述正确的是（   ）。\nA．有限时间完成但步骤可无限\nB．代码行数必须有限\nC．可包含死循环只要最终输出\nD．必须执行有限个步骤后终止，且每步有限时间完成", "答案：D。"),
+    ref("47．哪个问题适合动态规划？哪个适合分治？哪个适合贪心？哪个适合回溯？\nA．N皇后    B．棋盘覆盖    C．部分背包    D．矩阵链乘法", "答案：动态规划 D；分治 B；贪心 C；回溯 A。")
+  ],
+  algBlank: [
+    ref("1．算法复杂性最重要的计算机资源是 ______ 和 ______。", "答案：时间、空间。"),
+    ref("2．二分搜索最坏情况下时间复杂度是 ______。", "答案：O(log n)。"),
+    ref("3．回溯法解空间中解的形式是 ______；组织形式通常有 ______、______、______。", "答案：n 元组；子集树、排列树、满 m 叉树/状态空间树。"),
+    ref("4．回溯方法搜索方式是 ______，剪枝函数和限界函数作用分别是 ______。", "答案：深度优先；剪去不可能产生可行解或最优解的分支，利用界限排除不可能优于当前最优解的分支。"),
+    ref("5．A[1:10] 矩阵连乘 DP 存储各子问题最优值的二维数组共有 ______ 个存储单元。", "答案：100 个；若只计有效上三角子问题，为 55 个。"),
+    ref("6．算法满足输入、输出、______、______ 性和能行性。", "答案：确定性、有限性。"),
+    ref("7．二分搜索分治策略中的分解操作是 ______。", "答案：取中间位置 mid，将查找区间分成 low..mid-1 和 mid+1..high 两个子区间。"),
+    ref("8．矩阵连乘 DP 计算各子问题最优值复杂度是 ______。", "答案：O(n^3)。"),
+    ref("9．贪心法两个基本要素是 ______ 和 ______。", "答案：贪心选择性质、最优子结构。"),
+    ref("10．分治法三个步骤：______、______、______，核心思想是 ______。", "答案：分解、求解、合并；将大问题分解为相同类型的小问题递归求解。"),
+    ref("11．分支限界法以 ______ 或 ______ 的方式搜索解空间树。", "答案：广度优先、最小耗费/最大效益优先。"),
+    ref("12．分治法子问题之间 ______ 且与原问题相同，用 ______ 方法求解子问题。", "答案：相互独立；递归。"),
+    ref("13．最大团问题解空间树是 ______ 树，TSP 解空间树是 ______ 树。", "答案：子集树；排列树。"),
+    ref("14．回溯法以 ______ 搜索；分支限界法以 ______ 搜索。", "答案：深度优先；广度优先或优先队列式。"),
+    ref("15．A=\"xzyzzyx\"，B=\"zxyyzxz\" 的一个 LCS 为 ______，长度是 ______。", "参考答案：zyzx，长度 4。也可能存在其他长度为 4 的 LCS。"),
+    ref("16．MergeSort 空缺。", "答案：middle=(low+high)/2；MergeSort(A,middle+1,high)。"),
+    ref("17．m 着色 Backtrack 空缺。", "答案：x[t]=i；Backtrack(t+1)。"),
+    ref("18．动态规划步骤：最优子结构性质分析、______、计算最优值并记录信息，根据 ______。", "答案：建立递归关系/状态转移方程；记录的信息构造最优解。"),
+    ref("19．TSP 解空间树是 ______，回溯法时间复杂度为 ______。", "答案：排列树；O(n!)。"),
+    ref("20．0-1 背包状态转移方程。", "答案：m[i][j]=m[i-1][j]（j<wi）；m[i][j]=max(m[i-1][j], m[i-1][j-wi]+vi)（j>=wi）。题中 pi/vi 命名若价值为 pi、重量为 vi，则相应替换。"),
+    ref("21．渐近紧确界符号是（    ）。", "答案：Θ。"),
+    ref("22．Fibonacci 动态规划状态转移公式。", "答案：F(0)=0，F(1)=1，F(n)=F(n-1)+F(n-2)。若教材从第 1 项开始，则按 F1=0，F2=1 调整。"),
+    ref("23．动态规划基本要素有 ______、______、自底向上的求解方法。", "答案：最优子结构、重叠子问题。"),
+    ref("24．图 m 可着色解空间树是 ______，时间复杂度为 ______。", "答案：满 m 叉树；O(nm^n)。"),
+    ref("25．T(n)=2T(n/2)+1，T(1)=1，则 T(n)= ______。", "答案：2n-1，Θ(n)。")
+  ],
+  algShort: [
+    ref("1．简述算法的概念及特征，算法伪代码的具体符号表示含义。", "参考：算法是解决特定问题的一组有穷、确定、可执行的步骤。特征包括输入、输出、确定性、有限性、可行性。伪代码用赋值、条件、循环、过程调用、数组下标等类程序结构表达算法逻辑，不拘泥于具体语言语法。"),
+    ref("2．什么是算法复杂性？如何衡量？", "参考：算法复杂性指算法运行所需资源，主要衡量时间复杂度和空间复杂度。通常按输入规模 n 的增长趋势，用 O、Ω、Θ 等渐进符号表示。"),
+    ref("3．简述分治法的特征、思想和适用条件。", "参考：分治法把原问题分解为规模较小、结构相同、相互独立的子问题，递归求解后合并结果。适用条件：问题可分解，子问题与原问题同型，子问题相互独立，子问题解可合并。"),
+    ref("4．原文该题仅保留题号，未提供具体题干。", "参考：原题缺失，建议回看教师资料或课堂重点补题。"),
+    ref("5．简述贪心算法基本思想、步骤和基本要素。", "参考：每一步选择当前看来最优的局部选择，希望导出全局最优。步骤：建立候选集合，按贪心策略选择元素，判断可行并加入解集合，直到构成完整解。基本要素：贪心选择性质、最优子结构。"),
+    ref("6．简述动态规划步骤。为什么说以空间换时间？", "参考：分析最优子结构，定义状态，建立状态转移方程，确定边界，自底向上计算并记录信息，构造最优解。它保存子问题结果，避免重复计算，因此用额外存储换取时间效率。"),
+    ref("7．简述动态规划基本要素。", "参考：最优子结构、重叠子问题、状态定义、状态转移方程、边界条件，以及自底向上的表格计算。"),
+    ref("8．简述动态规划与分治算法异同。", "参考：相同点是都把原问题分解为子问题。不同点是分治的子问题通常相互独立，递归求解后合并；动态规划的子问题往往重叠，需要保存子问题结果，通常自底向上求解。"),
+    ref("9．简述回溯算法思想、可行解、可能解和最优解。", "参考：回溯按深度优先搜索解空间树，逐步构造解，遇到不满足约束或不可能更优的分支就剪枝。可能解是解空间中的候选组合；可行解满足约束；最优解是在可行解中目标函数最优的解。")
+  ],
+  algDesign: [
+    ref("1．活动安排问题：算法贪心策略，伪代码。", "参考：按活动结束时间从早到晚排序，每次选择与已选活动相容且结束最早的活动。伪代码：sort by finish time；S={a1}；last=1；for i=2..n if s[i]>=f[last] then add ai, last=i。", ["public/imgs/4-1.png"]),
+    ref("2．棋盘覆盖：2^3×2^3 特殊棋盘需要多少个 L 型骨牌，并填写覆盖情况。", "参考：除特殊方格外共有 8*8-1=63 个格子，每个 L 型骨牌覆盖 3 格，需要 21 个。方法是递归分成四个 4×4 子棋盘，在中心放一个 L 型骨牌制造三个“特殊方格”，继续递归覆盖。"),
+    ref("3．选第 K 小元素：问题分析，伪代码。", "参考：可用快速选择。选择枢轴 partition，设左区元素个数为 r。若 k=r，返回枢轴；若 k<r，在左区递归；否则在右区找第 k-r 小。平均 O(n)，最坏 O(n^2)；若用中位数的中位数选枢轴可保证 O(n)。", ["public/imgs/4-3.png"]),
+    ref("4．最长公共子序列：问题分析、状态转移方程、备忘录填充。", "参考：令 c[i][j] 为 X[1..i] 与 Y[1..j] 的 LCS 长度。若 i=0 或 j=0，c[i][j]=0；若 xi=yj，c[i][j]=c[i-1][j-1]+1；否则 c[i][j]=max(c[i-1][j],c[i][j-1])。", ["public/imgs/4-4.png"]),
+    ref("5．循环赛日程表：n=2^3 个选手的比赛日程表。", "参考：用分治构造。先构造 n/2 个选手的日程，再复制到右下与左下区域并加偏移，使每名选手每天遇到不同对手。8 个选手需 7 天。", ["public/imgs/4-5.png"]),
+    ref("6．动态规划求解 0-1 背包：备忘录填空，伪代码书写。", "参考：定义 m[i][j] 为前 i 个物品、容量 j 的最大价值。m[i][j]=m[i-1][j]（装不下）；否则 max(m[i-1][j], m[i-1][j-wi]+vi)。双重循环 i=1..n, j=0..W 填表。"),
+    ref("7．贪心算法解题步骤伪代码中各函数说明。", "参考：A 是候选集合；S 是逐步扩展的解集合；solution(S) 判断 S 是否构成完整解；select(A) 按贪心策略选当前最优候选；feasible(S,x) 判断加入 x 后是否仍满足约束。"),
+    ref("8．用回溯法解 4 皇后问题。", "参考：搜索范围为每一行选择一个列位置；解空间可用 4 层排列树/状态空间树表示；剪枝条件：同列冲突或同斜线冲突，即 x[i]=x[j] 或 |i-j|=|x[i]-x[j]|。继续深度优先搜索直到放置 4 个皇后。"),
+    ref("9．用回溯算法解决旅游路线问题。", "参考：将路线表示为城市排列，根结点为起点，之后每层选择一个未访问城市。约束是城市不重复；若要求最短路线，可用当前路径长度加下界与已知最优解比较进行剪枝。"),
+    ref("10．回溯算法中解的定义和组织结构。", "参考：解通常表示为 n 元组 x=(x1,...,xn)。组织结构包括子集树、排列树、满 m 叉树。旅游路线通常是排列树；密码箱若数字不重复是排列树，若每位可重复则是满 m 叉树。"),
+    ref("11．X=\"ABCDGHBB\"，Y=\"AEDFHRAB\"，求 LCS 状态转移方程和长度。", "参考：状态转移同 LCS 标准方程。该例一个 LCS 为 ADB 或 AHB，长度为 3。"),
+    ref("12．A、B、C、D 四个家，小华从 B 出发游玩其他三个家且每个只去一次，问方案数并画解空间树。", "参考：剩余 A、C、D 三个地点全排列，方案数 3! = 6。解空间树根为 B，第一层分 A/C/D，第二层从剩余两个中选，第三层为最后一个地点。")
+  ]
+};
+
 let state = {
+  subject: "english",
   page: "translation",
   answers: {},
   checked: {},
@@ -184,26 +315,53 @@ function v(unit, sentence, answer, chinese) {
   return { unit, sentence, answer, chinese };
 }
 
+function ref(text, answer, images = []) {
+  return { text, answer, images };
+}
+
 function init() {
   state.vocabOptions = buildVocabOptions();
-  renderNav();
+  renderSubjectNav();
+  renderTypeNav();
   render();
 }
 
-function renderNav() {
+function renderSubjectNav() {
   const nav = document.querySelector("#nav");
-  nav.innerHTML = pages.map(page => `<button class="${page.id === state.page ? "active" : ""}" data-page="${page.id}">${page.label}</button>`).join("");
+  nav.innerHTML = subjects.map(subject => `<button class="${subject.id === state.subject ? "active" : ""}" data-subject="${subject.id}">${subject.label}</button>`).join("");
+  nav.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      state.subject = button.dataset.subject;
+      state.page = currentSubject().pages[0].id;
+      renderSubjectNav();
+      renderTypeNav();
+      render();
+    });
+  });
+}
+
+function renderTypeNav() {
+  const nav = document.querySelector("#type-nav");
+  const pages = currentSubject().pages;
+  const note = document.querySelector("#ai-reference-note");
+  note.hidden = !["algorithm", "software"].includes(state.subject);
+  nav.innerHTML = pages.map(page => `<button class="${page.id === state.page ? "active" : ""}" data-page="${page.id}">
+    ${page.label}<small>${getPageCount(page.id)} 项</small>
+  </button>`).join("");
   nav.querySelectorAll("button").forEach(button => {
     button.addEventListener("click", () => {
       state.page = button.dataset.page;
-      renderNav();
+      renderTypeNav();
       render();
     });
   });
 }
 
 function render() {
-  const page = pages.find(item => item.id === state.page);
+  const subject = currentSubject();
+  const page = subject.pages.find(item => item.id === state.page) || subject.pages[0];
+  document.querySelector("#subject-subtitle").textContent = subject.subtitle;
+  document.querySelector("#subject-label").textContent = subject.label;
   document.querySelector("#page-title").textContent = page.title;
   document.querySelector("#content").innerHTML = "";
   if (state.page === "translation") renderTranslation();
@@ -212,6 +370,8 @@ function render() {
   if (state.page === "outReading") renderGroupedChoice("outReading");
   if (state.page === "cloze") renderCloze();
   if (state.page === "vocabulary") renderVocabulary();
+  if (state.page.startsWith("alg")) renderAlgorithmPage(state.page);
+  if (state.page.startsWith("sw")) renderReferencePage(softwareData, state.page);
 }
 
 function renderTranslation() {
@@ -434,6 +594,70 @@ function buildVocabOptions() {
   return data.vocabulary.map(item => shuffle([item.answer, ...shuffle(pool.filter(answer => answer !== item.answer)).slice(0, 3)]));
 }
 
+function renderAlgorithmPage(kind) {
+  renderReferencePage(algorithmData, kind);
+}
+
+function renderReferencePage(source, kind) {
+  const items = source[kind];
+  document.querySelector("#page-stats").textContent = `${items.length} 题 / 含参考答案`;
+  document.querySelector("#content").innerHTML = `
+    <article class="reference-panel">
+      <div class="section-body">
+        ${items.map((item, index) => renderReferenceQuestion(kind, index, item)).join("")}
+      </div>
+    </article>
+  `;
+  document.querySelectorAll("[data-show-ref]").forEach(button => {
+    button.addEventListener("click", () => {
+      state.checked[button.dataset.showRef] = true;
+      renderReferencePage(source, kind);
+    });
+  });
+  document.querySelectorAll("[data-hide-ref]").forEach(button => {
+    button.addEventListener("click", () => {
+      state.checked[button.dataset.hideRef] = false;
+      renderReferencePage(source, kind);
+    });
+  });
+}
+
+function renderReferenceQuestion(kind, index, item) {
+  const id = `${kind}-${index}`;
+  const visible = state.checked[id];
+  const images = item.images || [];
+  return `
+    <div class="question" id="card-${id}">
+      <p class="question-title">${escapeHtml(item.text).replace(/\n/g, "<br>")}</p>
+      ${images.map(src => `<figure class="question-media"><img src="${src}" alt="题目配图 ${index + 1}"></figure>`).join("")}
+      <div class="actions">
+        ${
+          visible
+            ? `<button class="btn secondary" data-hide-ref="${id}">收起参考</button>`
+            : `<button class="btn secondary" data-show-ref="${id}">查看参考</button>`
+        }
+      </div>
+      ${visible ? `<div class="answer-box">${escapeHtml(item.answer).replace(/\n/g, "<br>")}</div>` : ""}
+    </div>
+  `;
+}
+
+function currentSubject() {
+  return subjects.find(subject => subject.id === state.subject) || subjects[0];
+}
+
+function getPageCount(pageId) {
+  if (pageId === "translation") return 1;
+  if (["listening", "inReading", "outReading"].includes(pageId)) {
+    return data[pageId].reduce((sum, group) => sum + group.questions.length, 0);
+  }
+  if (pageId === "cloze") return data.cloze.answers.length;
+  if (pageId === "vocabulary") return data.vocabulary.length;
+  if (algorithmData[pageId]) return algorithmData[pageId].length;
+  if (typeof softwareData !== "undefined" && softwareData[pageId]) return softwareData[pageId].length;
+  return 0;
+}
+
 function resultHtml(ok, answer) {
   return `<div class="result ${ok ? "good" : "bad"}">${ok ? "回答正确" : `回答错误，${answer}`}</div>`;
 }
@@ -452,7 +676,15 @@ function groupBy(list, keyFn) {
 }
 
 function escapeAttr(text) {
-  return String(text).replace(/"/g, "&quot;");
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function escapeHtml(text) {
+  return escapeAttr(text);
 }
 
 init();

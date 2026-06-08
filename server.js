@@ -7,12 +7,19 @@ const port = 3000;
 const types = {
   ".html": "text/html;charset=utf-8",
   ".css": "text/css;charset=utf-8",
-  ".js": "text/javascript;charset=utf-8"
+  ".js": "text/javascript;charset=utf-8",
+  ".png": "image/png"
 };
 
 http.createServer((request, response) => {
   const requested = request.url === "/" ? "index.html" : request.url.split("?")[0];
-  const filePath = path.join(root, requested);
+  const filePath = path.normalize(path.join(root, decodeURIComponent(requested)));
+
+  if (!filePath.startsWith(root)) {
+    response.writeHead(403);
+    response.end("Forbidden");
+    return;
+  }
 
   fs.readFile(filePath, (error, content) => {
     if (error) {
