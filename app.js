@@ -1,10 +1,10 @@
 ﻿const pages = [
-  { id: "translation", label: "翻译题", title: "汉译英翻译" },
+  { id: "vocabulary", label: "词汇题", title: "Unit 1-2 词汇填空" },
   { id: "listening", label: "听力题", title: "听力选项练习" },
   { id: "inReading", label: "课内阅读", title: "Text A / Comprehension Check" },
   { id: "outReading", label: "课外阅读", title: "Session C Passages" },
   { id: "cloze", label: "选词填空", title: "Reading Comprehension" },
-  { id: "vocabulary", label: "词汇题", title: "Unit 1-2 词汇填空" }
+  { id: "translation", label: "翻译题", title: "汉译英翻译" }
 ];
 
 const subjects = [
@@ -29,6 +29,23 @@ const subjects = [
       { id: "swBlank", label: "填空题", title: "填空题" },
       { id: "swJudge", label: "判断题", title: "判断题" },
       { id: "swShort", label: "简答与设计", title: "简答题及设计题相关知识点" }
+    ]
+  },
+  {
+    id: "computer",
+    label: "计算机组成原理",
+    subtitle: "计算机组成原理",
+    pages: [
+      { id: "coCh12", label: "第1-2章", title: "第1-2章" },
+      { id: "coCh3", label: "第3章", title: "第3章" },
+      { id: "coCh4", label: "第4章", title: "第4章" },
+      { id: "coCh5", label: "第5章", title: "第5章" },
+      { id: "coCh6", label: "第6章", title: "第6章" },
+      { id: "coCh7", label: "第7章", title: "第7章" },
+      { id: "coCh8", label: "第8章", title: "第8章" },
+      { id: "coCh910", label: "第9-10章", title: "第9-10章" },
+      { id: "coTerms", label: "填空及名词解释", title: "填空及名词解释" },
+      { id: "coAll", label: "综合题库", title: "综合题库" }
     ]
   }
 ];
@@ -195,6 +212,99 @@ const data = {
   ]
 };
 
+applyEnglishUpdates();
+
+function applyEnglishUpdates() {
+  data.listening.push(
+    {
+      title: "25-06-1 Section B - Conversation One",
+      questions: [
+        q([
+          "A) She cannot avoid rush-hour traffic.",
+          "B) The local government is inefficient.",
+          "C) The city’s rush-hour traffic is intolerable.",
+          "D) The city is too big to move around easily."
+        ], "C", "8."),
+        q([
+          "A) Upgrading subway carriages.",
+          "B) Increasing the number of bus routes.",
+          "C) Learning from other big cities.",
+          "D) Air conditioning the city’s subway."
+        ], "D", "9."),
+        q([
+          "A) He takes a half-hour bus ride to work.",
+          "B) He is fortunate to live very near to work.",
+          "C) He suffers from rush-hour crowding too.",
+          "D) He is going to move closer to his office."
+        ], "A", "10."),
+        q([
+          "A) Tell her exactly what kind of property to look for.",
+          "B) Recommend to her a good house near his office.",
+          "C) Send her his housing agent’s telephone number.",
+          "D) Make sure the agent finds something good for her."
+        ], "C", "11.")
+      ]
+    },
+    {
+      title: "25-06-1 Section B - Conversation Two",
+      questions: [
+        q([
+          "A) He had some plastic surgery done.",
+          "B) He used to wear a sad face in school.",
+          "C) He received a heart operation a few days ago.",
+          "D) He was remembered for the scar on his cheek."
+        ], "A", "12."),
+        q([
+          "A) The man’s deep sympathy for Johnny.",
+          "B) The man’s use of the expression ‘fixed’.",
+          "C) The man’s good memory of his childhood.",
+          "D) The man’s covering up of what happened."
+        ], "B", "13."),
+        q([
+          "A) It seemed to make up for his physical defects.",
+          "B) It seemed to give him a certain uniqueness.",
+          "C) It made him appear even more manly.",
+          "D) It gave him a noticeable smartness."
+        ], "B", "14."),
+        q([
+          "A) Liberal.",
+          "B) Hostile.",
+          "C) Critical.",
+          "D) Indifferent."
+        ], "C", "15.")
+      ]
+    }
+  );
+
+  data.vocabulary = [
+    v("Unit 1", "Due to the lack of an adequate labor force, even women in this village were [compelled] to work in the coal mines.", "compelled", "由于缺乏足够的劳动力，这个村子里的妇女甚至[被迫]去煤矿工作。"),
+    v("Unit 1", "People in that area are already threatened with environmental [destruction] since 60% of the forest there has been destroyed.", "destruction", "那个地区的人们已经受到环境[破坏]的威胁，因为那里60%的森林已经被毁掉了。"),
+    v("Unit 1", "The auto company has seen a huge increase in the [output] of private cars this year due to the improved working efficiency.", "output", "由于工作效率的提高，这家汽车公司今年的私家车[产量]大幅增加。"),
+    v("Unit 1", "Under severe attack from enemy aircraft, the troops were forced to [retreat] from the front.", "retreat", "在敌机的猛烈攻击下，部队被迫从前线[撤退]。"),
+    v("Unit 1", "Survival of the Fittest is an [eternal] truth of nature.", "eternal", "适者生存是自然界[永恒]的真理。"),
+    v("Unit 1", "The military government refused to [transfer] power to a democratically elected civilian government.", "transfer", "军政府拒绝将权力[移交]给民选文职政府。"),
+    v("Unit 1", "Postal service personnel who are severely irresponsible purposely delay sending mail, [thereby] giving rise to great loss of public trust.", "thereby", "严重不负责任的邮政人员故意拖延寄信，[从而]导致公众信任的巨大损失。"),
+    v("Unit 1", "With the increase in the number of foreign funded enterprises, various kinds of financial disputes [have emerged].", "have emerged", "随着外资企业数量的增加，各种金融纠纷也[出现了]。"),
+    v("Unit 1", "The earthquake may [trigger] landslides that cause great damage and loss of life.", "trigger", "地震可能[引发]山体滑坡，造成巨大的破坏和生命损失。"),
+    v("Unit 1", "Deforestation and global warming [threaten] to ruin the current and future state of our environment.", "threaten", "森林砍伐和全球变暖[有可能破坏]我们环境的现状和未来。"),
+    v("Unit 1", "It was reported that almost 7 million liters [were consumed] during the 16-day beer festival in Germany that year.", "were consumed", "据报道，那年德国为期16天的啤酒节期间，[消费了]近700万升啤酒。"),
+    v("Unit 2", "Studies show that if a working environment is pleasant, [productivity] increases.", "productivity", "研究表明，若工作环境舒适宜人，【工作效率】便会提升。"),
+    v("Unit 2", "Private space travel is a relatively new [phenomenon]. It’s difficult at the moment to assess its effects.", "phenomenon", "私人太空旅行是一个相对较新的【现象】。目前很难评估其影响。"),
+    v("Unit 2", "All of us need to build up relationships with others unless we choose to live in complete [isolation] from the outside world.", "isolation", "我们所有人都需要与他人建立关系，除非我们选择与外界完全【隔绝】。"),
+    v("Unit 2", "Since sending her child to the kindergarten, she has been delighted to see a(n) [gradual] change in the boy’s character; he seems less self-centered now.", "gradual", "自从把孩子送进幼儿园，她高兴地看到男孩的性格发生了【逐渐的】变化；他现在似乎不那么以自我为中心了。"),
+    v("Unit 2", "Quills were the chief writing tool from the 6th century until the [advent] of steel pens in the mid 19th century.", "advent", "从6世纪到19世纪中期钢笔【出现】之前，羽毛笔一直是主要的书写工具。"),
+    v("Unit 2", "Do you think it will ever be possible to alter human [genetic] code in order to produce the “perfect” human being?", "genetic", "你认为有可能改变人类【基因】密码以制造出“完美”的人类吗？"),
+    v("Unit 2", "In the end her sheer competence and professionalism won [universal] respect within and out of the government.", "universal", "最终，她纯粹的能力和专业精神赢得了政府内外的【普遍】尊重。"),
+    v("Unit 2", "His political views are rather [extreme]; I hate to discuss anything with him.", "extreme", "他的政治观点相当【极端】；我讨厌和他讨论任何事。"),
+    v("Unit 2", "The cheap perfume you see on special offer in petrol stations often smells [nasty] after a couple of hours.", "nasty", "你在加油站特价看到的廉价香水，几小时后通常闻起来很【难闻】。"),
+    v("Unit 2", "The consumer [boom] of the 1980s led to an explosion of shopping centre development in big cities around the country.", "boom", "20世纪80年代的消费【繁荣】导致了全国各大城市购物中心开发的激增。"),
+    v("Unit 2", "You shouldn’t use “Yours faithfully”—it’s too [formal] for this kind of personal letter.", "formal", "你不应该使用“Yours faithfully”——对于这种私人信件来说太【正式】了。"),
+    v("Unit 2", "According to a(n) [survey] among 1000 residents, garbage collection service in the city is far from satisfactory.", "survey", "根据对1000名居民的【调查】，该市的垃圾收集服务远不能令人满意。"),
+    v("Unit 2", "The cost of food and clothing has come down in recent years. [Similarly], fuel prices have fallen quite considerably.", "Similarly", "近年来食品和服装的成本下降了。【同样地】，燃料价格也大幅下跌。"),
+    v("Unit 2", "In my childhood memories, we were living a(n) [rough] but happy life, with no luxuries to speak of.", "rough", "在我的童年记忆里，我们过着【艰苦】却幸福的生活，谈不上任何奢华享受。")
+  ];
+}
+
 const algorithmData = {
   algChoice: [
     ref("1．下列说法错误的是（     ）。\nA．算法是程序在计算机上的具体实现。\nB．算法是用计算机编程语言翻译的结果。\nC．算法能直接在计算机上执行。\nD．程序能直接在计算机上执行。", "参考答案：A、B、C 均不严谨。若按单选题处理，优先选 C。算法是解决问题的步骤描述，不能直接在计算机上执行；程序才是可执行实现。"),
@@ -301,7 +411,7 @@ const algorithmData = {
 
 let state = {
   subject: "english",
-  page: "translation",
+  page: "vocabulary",
   answers: {},
   checked: {},
   vocabOptions: []
@@ -372,6 +482,7 @@ function render() {
   if (state.page === "vocabulary") renderVocabulary();
   if (state.page.startsWith("alg")) renderAlgorithmPage(state.page);
   if (state.page.startsWith("sw")) renderReferencePage(softwareData, state.page);
+  if (state.page.startsWith("co")) renderComputerPage(state.page);
 }
 
 function renderTranslation() {
@@ -626,6 +737,7 @@ function renderReferenceQuestion(kind, index, item) {
   const id = `${kind}-${index}`;
   const visible = state.checked[id];
   const images = item.images || [];
+  const answerImages = item.answerImages || [];
   return `
     <div class="question" id="card-${id}">
       <p class="question-title">${escapeHtml(item.text).replace(/\n/g, "<br>")}</p>
@@ -637,9 +749,223 @@ function renderReferenceQuestion(kind, index, item) {
             : `<button class="btn secondary" data-show-ref="${id}">查看参考</button>`
         }
       </div>
-      ${visible ? `<div class="answer-box">${escapeHtml(item.answer).replace(/\n/g, "<br>")}</div>` : ""}
+      ${visible ? `<div class="answer-box">${escapeHtml(item.answer).replace(/\n/g, "<br>")}</div>${answerImages.map(src => `<figure class="question-media answer-media"><img src="${src}" alt="参考图 ${index + 1}"></figure>`).join("")}` : ""}
     </div>
   `;
+}
+
+function renderComputerPage(kind) {
+  const section = computerData[kind];
+  if (!section) return;
+  document.querySelector("#page-stats").textContent = `${section.questions.length} 题 / 可校验`;
+  document.querySelector("#content").innerHTML = `
+    <article class="reference-panel">
+      <div class="actions chapter-actions">
+        <button class="btn secondary" data-check-computer-page="${kind}">${kind === "coAll" ? "校验当前题库" : "校验本章"}</button>
+      </div>
+      <div class="section-body">
+        ${section.questions.map((item, index) => renderComputerQuestion(kind, index, item)).join("")}
+      </div>
+    </article>
+  `;
+  bindComputerEvents(kind);
+}
+
+function renderComputerQuestion(kind, index, item) {
+  const id = `${kind}-${index}`;
+  const status = state.checked[id] || {};
+  const sourceText = kind === "coAll" ? `${item.source} / ${item.questionType}` : item.questionType;
+
+  if (item.type === "choice") {
+    const selected = normalizeComputerChoice(state.answers[id]);
+    const multiple = item.answer.length > 1;
+    const checked = Boolean(status.checked);
+    const ok = checked && sameChoiceAnswers(selected, item.answer);
+    const result = checked ? resultHtml(ok, `正确答案：${item.answer.join("、")}`) : "";
+    return `
+      <div class="question" id="card-${id}">
+        <p class="question-source">${escapeHtml(sourceText)}</p>
+        <p class="question-title">${item.number}. ${escapeHtml(item.stem).replace(/\n/g, "<br>")}</p>
+        <div class="options">
+          ${item.options.map(option => `
+            <label class="option">
+              <input type="${multiple ? "checkbox" : "radio"}" name="${id}" value="${option.letter}" ${selected.includes(option.letter) ? "checked" : ""}>
+              <span>${escapeHtml(`${option.letter}. ${option.text}`).replace(/\n/g, "<br>")}</span>
+            </label>
+          `).join("")}
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-check-computer="${id}">校验本题</button>
+        </div>
+        ${result}
+      </div>
+    `;
+  }
+
+  if (item.type === "fill") {
+    const values = normalizeComputerFillValues(state.answers[id], item.answerTexts.length);
+    const checked = Boolean(status.checked);
+    const ok = checked && item.answerTexts.every((answer, answerIndex) => matchesAcceptableAnswer(values[answerIndex], answer));
+    const answerText = item.answerTexts.map((answer, answerIndex) => `${answerIndex + 1}. ${formatAcceptableAnswer(answer)}`).join("<br>");
+    const result = checked ? resultHtml(ok, `参考答案：${escapeHtml(item.answerTexts.map(formatAcceptableAnswer).join("；"))}`) : "";
+    return `
+      <div class="question" id="card-${id}">
+        <p class="question-source">${escapeHtml(sourceText)}</p>
+        <p class="question-title">${item.number}. ${escapeHtml(item.stem).replace(/\n/g, "<br>")}</p>
+        <div class="fill-answer-list">
+          ${item.answerTexts.map((_, answerIndex) => `
+            <label class="fill-answer-item">
+              <span>第 ${answerIndex + 1} 空</span>
+              <input
+                class="answer-input"
+                type="text"
+                name="${id}"
+                data-answer-index="${answerIndex}"
+                value="${escapeAttr(values[answerIndex])}"
+                placeholder="输入答案"
+              >
+            </label>
+          `).join("")}
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-check-computer="${id}">校验本题</button>
+        </div>
+        ${result}
+        ${checked ? `<div class="answer-box">${answerText}</div>` : ""}
+      </div>
+    `;
+  }
+
+  const textValue = typeof state.answers[id] === "string" ? state.answers[id] : "";
+  const expected = item.answerTexts.join("\n");
+  const checked = Boolean(status.checked);
+  const ok = checked && normalizeText(textValue) === normalizeText(expected);
+  const result = checked ? resultHtml(ok, "参考答案见下方") : "";
+  return `
+    <div class="question" id="card-${id}">
+      <p class="question-source">${escapeHtml(sourceText)}</p>
+      <p class="question-title">${item.number}. ${escapeHtml(item.stem).replace(/\n/g, "<br>")}</p>
+      <textarea
+        class="answer-textarea"
+        name="${id}"
+        data-computer-text="true"
+        placeholder="先自己作答，再点校验"
+      >${escapeHtml(textValue)}</textarea>
+      <div class="actions">
+        <button class="btn secondary" data-check-computer="${id}">校验本题</button>
+      </div>
+      ${result}
+      ${checked ? `<div class="answer-box">${escapeHtml(expected).replace(/\n/g, "<br>")}</div>` : ""}
+    </div>
+  `;
+}
+
+function bindComputerEvents(kind) {
+  document.querySelectorAll("[data-check-computer]").forEach(button => {
+    button.addEventListener("click", () => {
+      const id = button.dataset.checkComputer;
+      const status = state.checked[id] || {};
+      state.checked[id] = { ...status, checked: true };
+      renderComputerPage(kind);
+    });
+  });
+
+  document.querySelectorAll("[data-check-computer-page]").forEach(button => {
+    button.addEventListener("click", () => {
+      computerData[kind].questions.forEach((_, index) => {
+        const id = `${kind}-${index}`;
+        const status = state.checked[id] || {};
+        state.checked[id] = { ...status, checked: true };
+      });
+      renderComputerPage(kind);
+    });
+  });
+
+  document.querySelectorAll(".question input[type='radio'][name^='co'], .question input[type='checkbox'][name^='co']").forEach(input => {
+    input.addEventListener("change", event => {
+      const name = event.target.name;
+      const selected = Array.from(document.querySelectorAll(`input[name='${name}']:checked`)).map(item => item.value);
+      state.answers[name] = selected;
+      const status = state.checked[name] || {};
+      state.checked[name] = { ...status, checked: false };
+    });
+  });
+
+  document.querySelectorAll(".answer-input").forEach(input => {
+    input.addEventListener("input", event => {
+      const name = event.target.name;
+      const answerIndex = Number(event.target.dataset.answerIndex);
+      const values = normalizeComputerFillValues(state.answers[name], itemCountByName(name, kind));
+      values[answerIndex] = event.target.value;
+      state.answers[name] = values;
+      const status = state.checked[name] || {};
+      state.checked[name] = { ...status, checked: false };
+    });
+  });
+
+  document.querySelectorAll("[data-computer-text]").forEach(textarea => {
+    textarea.addEventListener("input", event => {
+      const name = event.target.name;
+      state.answers[name] = event.target.value;
+      const status = state.checked[name] || {};
+      state.checked[name] = { ...status, checked: false };
+    });
+  });
+}
+
+function itemCountByName(name, kind) {
+  const index = Number(name.split("-").pop());
+  const item = computerData[kind].questions[index];
+  return item && item.answerTexts ? item.answerTexts.length : 1;
+}
+
+function normalizeComputerChoice(value) {
+  if (Array.isArray(value)) return value;
+  if (typeof value === "string" && value) return [value];
+  return [];
+}
+
+function normalizeComputerFillValues(value, count) {
+  if (Array.isArray(value)) {
+    return Array.from({ length: count }, (_, index) => value[index] || "");
+  }
+  return Array.from({ length: count }, () => "");
+}
+
+function splitAcceptableAnswers(answer) {
+  return String(answer || "")
+    .split(/[;；]/)
+    .map(item => item.trim())
+    .filter(Boolean);
+}
+
+function matchesAcceptableAnswer(input, answer) {
+  const normalizedInput = normalizeText(input);
+  return splitAcceptableAnswers(answer).some(option => normalizeText(option) === normalizedInput);
+}
+
+function formatAcceptableAnswer(answer) {
+  return splitAcceptableAnswers(answer).join(" / ");
+}
+
+function sameChoiceAnswers(selected, expected) {
+  if (selected.length !== expected.length) return false;
+  const sortedSelected = [...selected].sort();
+  const sortedExpected = [...expected].sort();
+  return sortedSelected.every((value, index) => value === sortedExpected[index]);
+}
+
+function normalizeText(text) {
+  return String(text || "")
+    .replace(/[，]/g, ",")
+    .replace(/[；]/g, ";")
+    .replace(/[：]/g, ":")
+    .replace(/[。．]/g, ".")
+    .replace(/[“”]/g, "\"")
+    .replace(/[‘’]/g, "'")
+    .replace(/\s+/g, "")
+    .trim()
+    .toLowerCase();
 }
 
 function currentSubject() {
@@ -655,6 +981,7 @@ function getPageCount(pageId) {
   if (pageId === "vocabulary") return data.vocabulary.length;
   if (algorithmData[pageId]) return algorithmData[pageId].length;
   if (typeof softwareData !== "undefined" && softwareData[pageId]) return softwareData[pageId].length;
+  if (typeof computerData !== "undefined" && computerData[pageId]) return computerData[pageId].questions.length;
   return 0;
 }
 

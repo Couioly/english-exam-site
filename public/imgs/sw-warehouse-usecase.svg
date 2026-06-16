@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#333"/></marker>
+    <style>text{font-family:"Microsoft YaHei",SimSun,serif;fill:#111}.use{fill:#fffefa;stroke:#6b1d14;stroke-width:1.5}.line{stroke:#333;stroke-width:1.2}.arrow{stroke:#333;stroke-width:1.3;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="100%" height="100%" fill="#fbfaf6"/>
+  <text x="500" y="34" text-anchor="middle" font-size="20" font-weight="700">智能仓库管理系统用例图</text>
+  <rect x="240" y="70" width="580" height="415" fill="none" stroke="#aaa391"/>
+  <text x="530" y="96" text-anchor="middle" font-size="16">智能仓库管理系统</text>
+  <g id="admin"><circle cx="90" cy="120" r="16" fill="#fff" stroke="#111"/><line class="line" x1="90" y1="136" x2="90" y2="190"/><line class="line" x1="56" y1="158" x2="124" y2="158"/><line class="line" x1="90" y1="190" x2="62" y2="228"/><line class="line" x1="90" y1="190" x2="118" y2="228"/><text x="90" y="256" text-anchor="middle">管理员</text></g>
+  <g id="keeper"><circle cx="90" cy="315" r="16" fill="#fff" stroke="#111"/><line class="line" x1="90" y1="331" x2="90" y2="385"/><line class="line" x1="56" y1="353" x2="124" y2="353"/><line class="line" x1="90" y1="385" x2="62" y2="423"/><line class="line" x1="90" y1="385" x2="118" y2="423"/><text x="90" y="451" text-anchor="middle">仓管员</text></g>
+  <g id="picker"><circle cx="920" cy="250" r="16" fill="#fff" stroke="#111"/><line class="line" x1="920" y1="266" x2="920" y2="320"/><line class="line" x1="886" y1="288" x2="954" y2="288"/><line class="line" x1="920" y1="320" x2="892" y2="358"/><line class="line" x1="920" y1="320" x2="948" y2="358"/><text x="920" y="386" text-anchor="middle">拣货员</text></g>
+  <ellipse class="use" cx="395" cy="135" rx="90" ry="28"/><text x="395" y="140" text-anchor="middle">导入入库计划</text>
+  <ellipse class="use" cx="645" cy="135" rx="98" ry="28"/><text x="645" y="140" text-anchor="middle">查看/调整库位方案</text>
+  <ellipse class="use" cx="395" cy="235" rx="92" ry="28"/><text x="395" y="240" text-anchor="middle">划分存储区域</text>
+  <ellipse class="use" cx="645" cy="235" rx="92" ry="28"/><text x="645" y="240" text-anchor="middle">设置拣货顺序</text>
+  <ellipse class="use" cx="520" cy="330" rx="105" ry="28"/><text x="520" y="335" text-anchor="middle">生成库位分配方案</text>
+  <ellipse class="use" cx="395" cy="425" rx="92" ry="28"/><text x="395" y="430" text-anchor="middle">查看库存状态</text>
+  <ellipse class="use" cx="665" cy="380" rx="92" ry="28"/><text x="665" y="385" text-anchor="middle">查看拣货任务</text>
+  <ellipse class="use" cx="665" cy="445" rx="92" ry="28"/><text x="665" y="450" text-anchor="middle">更新拣货状态</text>
+  <line class="line" x1="125" y1="155" x2="305" y2="135"/><line class="line" x1="125" y1="155" x2="547" y2="135"/>
+  <line class="line" x1="125" y1="355" x2="303" y2="235"/><line class="line" x1="125" y1="355" x2="553" y2="235"/><line class="line" x1="125" y1="355" x2="415" y2="330"/><line class="line" x1="125" y1="355" x2="303" y2="425"/>
+  <line class="line" x1="885" y1="290" x2="757" y2="380"/><line class="line" x1="885" y1="305" x2="757" y2="445"/>
+  <line class="arrow" x1="90" y1="285" x2="90" y2="260"/><text x="118" y="275" font-size="12">管理员拥有仓管员权限</text>
+</svg>
