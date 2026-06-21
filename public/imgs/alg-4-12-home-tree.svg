@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+  <rect width="900" height="500" fill="#fcfbf7"/>
+  <text x="40" y="52" font-size="28" font-family="Microsoft YaHei, Arial, sans-serif" fill="#1f2937">从 B 出发游玩 A、C、D 的解空间树</text>
+  <text x="40" y="84" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#6b7280">固定起点 B 后，对其余三个地点做全排列，因此共有 3! = 6 种方案。</text>
+
+  <g stroke="#4b5563" stroke-width="2" fill="none">
+    <line x1="450" y1="126" x2="210" y2="220"/>
+    <line x1="450" y1="126" x2="450" y2="220"/>
+    <line x1="450" y1="126" x2="690" y2="220"/>
+
+    <line x1="210" y1="220" x2="130" y2="320"/>
+    <line x1="210" y1="220" x2="290" y2="320"/>
+    <line x1="450" y1="220" x2="370" y2="320"/>
+    <line x1="450" y1="220" x2="530" y2="320"/>
+    <line x1="690" y1="220" x2="610" y2="320"/>
+    <line x1="690" y1="220" x2="770" y2="320"/>
+
+    <line x1="130" y1="320" x2="130" y2="410"/>
+    <line x1="290" y1="320" x2="290" y2="410"/>
+    <line x1="370" y1="320" x2="370" y2="410"/>
+    <line x1="530" y1="320" x2="530" y2="410"/>
+    <line x1="610" y1="320" x2="610" y2="410"/>
+    <line x1="770" y1="320" x2="770" y2="410"/>
+  </g>
+
+  <g font-family="Consolas, 'Courier New', monospace" font-size="18" text-anchor="middle">
+    <rect x="395" y="100" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="450" y="126" fill="#111827">(B)</text>
+
+    <rect x="155" y="200" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="210" y="226" fill="#111827">(B,A)</text>
+    <rect x="395" y="200" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="450" y="226" fill="#111827">(B,C)</text>
+    <rect x="635" y="200" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="690" y="226" fill="#111827">(B,D)</text>
+
+    <rect x="75" y="300" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="130" y="326" fill="#111827">(B,A,C)</text>
+    <rect x="235" y="300" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="290" y="326" fill="#111827">(B,A,D)</text>
+    <rect x="315" y="300" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="370" y="326" fill="#111827">(B,C,A)</text>
+    <rect x="475" y="300" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="530" y="326" fill="#111827">(B,C,D)</text>
+    <rect x="555" y="300" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="610" y="326" fill="#111827">(B,D,A)</text>
+    <rect x="715" y="300" width="110" height="40" rx="10" fill="#ffffff" stroke="#374151"/>
+    <text x="770" y="326" fill="#111827">(B,D,C)</text>
+
+    <rect x="75" y="390" width="110" height="40" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="130" y="416" fill="#1d4ed8">(B,A,C,D)</text>
+    <rect x="235" y="390" width="110" height="40" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="290" y="416" fill="#1d4ed8">(B,A,D,C)</text>
+    <rect x="315" y="390" width="110" height="40" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="370" y="416" fill="#1d4ed8">(B,C,A,D)</text>
+    <rect x="475" y="390" width="110" height="40" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="530" y="416" fill="#1d4ed8">(B,C,D,A)</text>
+    <rect x="555" y="390" width="110" height="40" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="610" y="416" fill="#1d4ed8">(B,D,A,C)</text>
+    <rect x="715" y="390" width="110" height="40" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="770" y="416" fill="#1d4ed8">(B,D,C,A)</text>
+  </g>
+</svg>

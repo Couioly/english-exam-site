@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="620" viewBox="0 0 980 620">
+  <rect width="980" height="620" fill="#fcfbf7"/>
+  <text x="40" y="52" font-size="28" font-family="Microsoft YaHei, Arial, sans-serif" fill="#1f2937">回溯法中解的定义与组织结构</text>
+  <text x="40" y="84" font-size="17" font-family="Microsoft YaHei, Arial, sans-serif" fill="#6b7280">解通常写成 n 元组 x=(x1,x2,...,xn)，每个分量代表一次决策；不同问题常对应不同的解空间树。</text>
+
+  <g transform="translate(40,120)">
+    <rect width="270" height="430" rx="18" fill="#fffefb" stroke="#d6d3d1"/>
+    <text x="26" y="42" font-size="24" font-family="Microsoft YaHei, Arial, sans-serif" fill="#7c2d12">子集树</text>
+    <text x="26" y="78" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">每层只有“取 / 不取”两种选择，</text>
+    <text x="26" y="104" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">适合 0-1 背包、最大团等问题。</text>
+    <g stroke="#4b5563" stroke-width="2" fill="none">
+      <line x1="130" y1="140" x2="70" y2="220"/><line x1="130" y1="140" x2="190" y2="220"/>
+      <line x1="70" y1="220" x2="40" y2="300"/><line x1="70" y1="220" x2="100" y2="300"/>
+      <line x1="190" y1="220" x2="160" y2="300"/><line x1="190" y1="220" x2="220" y2="300"/>
+    </g>
+    <g font-family="Consolas, 'Courier New', monospace" font-size="16" text-anchor="middle">
+      <circle cx="130" cy="140" r="24" fill="#eef2ff" stroke="#6366f1"/><text x="130" y="146">x1</text>
+      <circle cx="70" cy="220" r="24" fill="#ffffff" stroke="#374151"/><text x="70" y="226">0</text>
+      <circle cx="190" cy="220" r="24" fill="#ffffff" stroke="#374151"/><text x="190" y="226">1</text>
+      <circle cx="40" cy="300" r="24" fill="#ffffff" stroke="#374151"/><text x="40" y="306">0</text>
+      <circle cx="100" cy="300" r="24" fill="#ffffff" stroke="#374151"/><text x="100" y="306">1</text>
+      <circle cx="160" cy="300" r="24" fill="#ffffff" stroke="#374151"/><text x="160" y="306">0</text>
+      <circle cx="220" cy="300" r="24" fill="#ffffff" stroke="#374151"/><text x="220" y="306">1</text>
+    </g>
+    <text x="26" y="372" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">例：x_i=0 表示不选第 i 个物品，</text>
+    <text x="26" y="398" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">x_i=1 表示选第 i 个物品。</text>
+  </g>
+
+  <g transform="translate(355,120)">
+    <rect width="270" height="430" rx="18" fill="#fffefb" stroke="#d6d3d1"/>
+    <text x="26" y="42" font-size="24" font-family="Microsoft YaHei, Arial, sans-serif" fill="#0f766e">排列树</text>
+    <text x="26" y="78" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">每层从剩余元素中选一个，</text>
+    <text x="26" y="104" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">适合旅行商、全排列、路线安排。</text>
+    <g stroke="#4b5563" stroke-width="2" fill="none">
+      <line x1="135" y1="145" x2="70" y2="220"/><line x1="135" y1="145" x2="135" y2="220"/><line x1="135" y1="145" x2="200" y2="220"/>
+      <line x1="70" y1="220" x2="45" y2="300"/><line x1="70" y1="220" x2="95" y2="300"/>
+      <line x1="135" y1="220" x2="110" y2="300"/><line x1="135" y1="220" x2="160" y2="300"/>
+      <line x1="200" y1="220" x2="175" y2="300"/><line x1="200" y1="220" x2="225" y2="300"/>
+    </g>
+    <g font-family="Consolas, 'Courier New', monospace" font-size="16" text-anchor="middle">
+      <rect x="95" y="124" width="80" height="40" rx="10" fill="#ecfeff" stroke="#14b8a6"/><text x="135" y="149">( )</text>
+      <rect x="30" y="200" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="70" y="225">(A)</text>
+      <rect x="95" y="200" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="135" y="225">(B)</text>
+      <rect x="160" y="200" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="200" y="225">(C)</text>
+      <rect x="5" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="45" y="305">(A,B)</text>
+      <rect x="55" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="95" y="305">(A,C)</text>
+      <rect x="70" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151" opacity="0"/>
+      <rect x="70" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="110" y="305">(B,A)</text>
+      <rect x="120" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="160" y="305">(B,C)</text>
+      <rect x="135" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151" opacity="0"/>
+      <rect x="135" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="175" y="305">(C,A)</text>
+      <rect x="185" y="280" width="80" height="40" rx="10" fill="#ffffff" stroke="#374151"/><text x="225" y="305">(C,B)</text>
+    </g>
+    <text x="26" y="372" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">结点层次越深，表示已确定的顺序越长。</text>
+  </g>
+
+  <g transform="translate(670,120)">
+    <rect width="270" height="430" rx="18" fill="#fffefb" stroke="#d6d3d1"/>
+    <text x="26" y="42" font-size="24" font-family="Microsoft YaHei, Arial, sans-serif" fill="#1d4ed8">满 m 叉树</text>
+    <text x="26" y="78" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">每个位置都能从 m 个值中重复选择，</text>
+    <text x="26" y="104" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">适合密码箱、口令枚举这类问题。</text>
+    <g stroke="#4b5563" stroke-width="2" fill="none">
+      <line x1="135" y1="145" x2="65" y2="220"/><line x1="135" y1="145" x2="135" y2="220"/><line x1="135" y1="145" x2="205" y2="220"/>
+      <line x1="65" y1="220" x2="35" y2="300"/><line x1="65" y1="220" x2="65" y2="300"/><line x1="65" y1="220" x2="95" y2="300"/>
+    </g>
+    <g font-family="Consolas, 'Courier New', monospace" font-size="16" text-anchor="middle">
+      <circle cx="135" cy="145" r="22" fill="#dbeafe" stroke="#2563eb"/><text x="135" y="151">_</text>
+      <circle cx="65" cy="220" r="22" fill="#ffffff" stroke="#374151"/><text x="65" y="226">2</text>
+      <circle cx="135" cy="220" r="22" fill="#ffffff" stroke="#374151"/><text x="135" y="226">3</text>
+      <circle cx="205" cy="220" r="22" fill="#ffffff" stroke="#374151"/><text x="205" y="226">5</text>
+      <circle cx="35" cy="300" r="22" fill="#ffffff" stroke="#374151"/><text x="35" y="306">2</text>
+      <circle cx="65" cy="300" r="22" fill="#ffffff" stroke="#374151"/><text x="65" y="306">3</text>
+      <circle cx="95" cy="300" r="22" fill="#ffffff" stroke="#374151"/><text x="95" y="306">5</text>
+    </g>
+    <text x="26" y="372" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">若每位密码都可取 2、3、5，且允许重复，</text>
+    <text x="26" y="398" font-size="16" font-family="Microsoft YaHei, Arial, sans-serif" fill="#374151">对应的就是满 3 叉树。</text>
+  </g>
+</svg>
